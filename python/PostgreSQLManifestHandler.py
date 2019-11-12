@@ -22,7 +22,7 @@ class PostgreSQLManifestHandler(ManifestHandler):
         self.initReadgroups()
         self.initPairs()
         self.initFilesReadgroups()
-        self.initPyCloneAliquots()
+        #self.initPyCloneAliquots()
             
         ManifestHandler.__init__(self, source_file_basepath, aligned_file_basepath, from_source, by_cohort)
 

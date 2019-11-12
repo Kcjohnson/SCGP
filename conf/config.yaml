@@ -6,13 +6,13 @@ from_source: 0
 
 ## Database settings
 db:
-  configfile: "/projects/verhaak-lab/GLASS-analysis/.odbc.ini"
-  configsection: "GLASSv2"
+  configfile: "/projects/verhaak-lab/SCGP/.odbc.ini"
+  configsection: "SCGP"
 
 ## Data paths
 data:
-  source_path: "/projects/verhaak-lab/GLASS-analysis/data"
-  realn_path: "/projects/verhaak-lab/GLASS-analysis/results/align/bqsr"
+  source_path: "/projects/verhaak-lab/SCGP/data"
+  realn_path: "/projects/verhaak-lab/SCGP/results/align/bqsr"
 
 #### JSON files (as alternative to database)
 # json:

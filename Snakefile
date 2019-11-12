@@ -45,13 +45,13 @@ WGS_SCATTERLIST = ["temp_{num}_of_50".format(num=str(j+1).zfill(4)) for j in ran
 ## We do not want the additional DAG processing if not from source
 #if(config["from_source"]):
 #    include: "snakemake/download.smk"
-#include: "snakemake/align.smk"
+include: "snakemake/align.smk"
 
 # include: "snakemake/haplotype-map.smk"
 #include: "snakemake/fingerprinting.smk"
-include: "snakemake/telseq.smk"
+#include: "snakemake/telseq.smk"
 #include: "snakemake/mutect2.smk"
-include: "snakemake/mutect2-post.smk"
+#include: "snakemake/mutect2-post.smk"
 # include: "snakemake/varscan2.smk"
 # include: "snakemake/cnvnator.smk"
 # include: "snakemake/lumpy.smk"
@@ -62,8 +62,8 @@ include: "snakemake/mutect2-post.smk"
 #include: "snakemake/optitype.smk"
 #include: "snakemake/pvacseq.smk"
 #include: "snakemake/cnv-post.smk"
-include: "snakemake/titan.smk"
-include: "snakemake/pyclone.smk"
+#include: "snakemake/titan.smk"
+#include: "snakemake/pyclone.smk"
 
 ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## 
 ## Upload coverage to database
