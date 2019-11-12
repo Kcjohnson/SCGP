@@ -48,6 +48,9 @@ WGS_SCATTERLIST = ["temp_{num}_of_50".format(num=str(j+1).zfill(4)) for j in ran
 include: "snakemake/align.smk"
 
 
+#    include: "snakemake/download.smk"
+include: "snakemake/align.smk"
+
 #DNA modules
 #include: "snakemake/download.smk"
 #include: "snakemake/align.smk"
@@ -56,11 +59,11 @@ include: "snakemake/align.smk"
 #include: "snakemake/telseq.smk"
 #include: "snakemake/mutect2.smk"
 #include: "snakemake/mutect2-post.smk"
-#include: "snakemake/varscan2.smk"
-#include: "snakemake/cnvnator.smk"
-#include: "snakemake/lumpy.smk"
-#include: "snakemake/delly.smk"
-#include: "snakemake/manta.smk"
+# include: "snakemake/varscan2.smk"
+# include: "snakemake/cnvnator.smk"
+# include: "snakemake/lumpy.smk"
+# include: "snakemake/delly.smk"
+# include: "snakemake/manta.smk"
 #include: "snakemake/cnv.smk"
 #include: "snakemake/sequenza.smk"
 #include: "snakemake/optitype.smk"
