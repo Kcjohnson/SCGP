@@ -57,14 +57,14 @@ include: "snakemake/align.smk"
 #include: "snakemake/haplotype-map.smk"
 #include: "snakemake/fingerprinting.smk"
 #include: "snakemake/telseq.smk"
-#include: "snakemake/mutect2.smk"
+include: "snakemake/mutect2.smk"
 #include: "snakemake/mutect2-post.smk"
 # include: "snakemake/varscan2.smk"
 # include: "snakemake/cnvnator.smk"
 # include: "snakemake/lumpy.smk"
 # include: "snakemake/delly.smk"
 # include: "snakemake/manta.smk"
-#include: "snakemake/cnv.smk"
+include: "snakemake/cnv.smk"
 #include: "snakemake/sequenza.smk"
 #include: "snakemake/optitype.smk"
 #include: "snakemake/pvacseq.smk"
@@ -178,7 +178,7 @@ rule qc:
 
 rule mutect2:
     input:
-        expand("results/mutect2/m2filter/{case_barcode}.filtered.vcf.gz", case_barcode = manifest.getSelectedCases()),
+        #expand("results/mutect2/m2filter/{case_barcode}.filtered.vcf.gz", case_barcode = manifest.getSelectedCases()),
         expand("results/mutect2/ssm2filter/{pair_barcode}.filtered.vcf.gz", pair_barcode = manifest.getSelectedPairs())
 
 rule ssmutect2:
@@ -306,6 +306,7 @@ rule fingerprint:
 
 rule quant_tpm:
     input:
+       "results/kallisto/kallisto/final/transcript_tpms_all_samples.tsv",
        "results/kallisto/kallisto/final/transcript_tpm_matrix_all_samples.tsv",
        "results/kallisto/kallisto/final/gene_tpm_matrix_all_samples.tsv"
                 

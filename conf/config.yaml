@@ -6,13 +6,13 @@ from_source: 0
 
 ## Database settings
 db:
-  configfile: "/projects/verhaak-lab/SCGP/.odbc.ini"
+  configfile: "/projects/verhaak-lab/SCGP-analysis/.odbc.ini"
   configsection: "SCGP"
 
 ## Data paths
 data:
-  source_path: "/projects/verhaak-lab/SCGP/data"
-  realn_path: "/projects/verhaak-lab/SCGP/results/align/bqsr"
+  source_path: "/projects/verhaak-lab/SCGP-analysis/data"
+  realn_path: "/projects/verhaak-lab/SCGP-analysis/results/align/bqsr"
 
 #### JSON files (as alternative to database)
 # json:
@@ -141,6 +141,12 @@ vepplugins:       "/projects/varnf/SofWar/VEP_plugins/"
 
 ## pVACseq iedb install directory 
 iedb:             "/projects/varnf/SofWar/pvactools/IEDB/"
+
+## Kallisto index
+kallisto_idx:   "/projects/varnf/SofWar/kallisto/Ensembl_v96_homo_sapiens/homo_sapiens/transcriptome.idx"
+
+## Kallisto mapping
+ensembl_transcript_mapping: "/projects/varnf/SofWar/kallisto/Ensembl_v96_homo_sapiens/homo_sapiens/transcripts_to_genes.txt"
 
 seconds_between_progress_updates: 900
 

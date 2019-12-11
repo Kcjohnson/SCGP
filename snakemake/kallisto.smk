@@ -70,31 +70,20 @@ rule mergetpm:
     log:
         "logs/RNAseq/kallisto/mergetpm.log"
     message:
-        "Merging aliquot TPMs into one file"
+        "Merging aliquot TPMs into one file and uploading to database"
     shell:
     	"""
     	set +o pipefail; 
     	cat {input} | head -1 | sed 's/^/aliquot_barcode\t/' > {output}    	
     	for f in {input}
     	do
-    		al=$(echo $f | cut -c 35-64)
+    		al=$(echo $f | cut -c 35-63)				#Get aliquot barcode from file name
     		sed "s/^/$al\t/g" $f | tail -n+2 -q >> {output}
-    	done 2>{log}
+    	done 
+    	
+    	Rscript R/snakemake/tpm2db.R {output}
+    	2>{log}
     	"""
-
-## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## 
-## Upload transcripts to db
-## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
-
-rule tpm2db:
-    input:
-        "results/kallisto/kallisto/final/transcript_tpms_all_samples.tsv"
-    log:
-        "logs/RNAseq/kallisto/tpm2db.log"
-    message:
-        "Uploading transcripts to the database"
-    script:
-    	"../R/snakemake/tpm2db.R"
 
 		
 ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## 

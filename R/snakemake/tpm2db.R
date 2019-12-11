@@ -7,7 +7,7 @@ library(DBI)
 #######################################################
 
 #Establish connection
-con <- DBI::dbConnect(odbc::odbc(), "GLASSv3")
+con <- DBI::dbConnect(odbc::odbc(), "scgp")
 
 transcript_tpm <- "results/kallisto/kallisto/final/transcript_tpms_all_samples.tsv"
 

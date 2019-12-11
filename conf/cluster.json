@@ -5,7 +5,7 @@
         "name" : "{rule}.{wildcards.aliquot_barcode}",
         "j" : "oe",
         "m" : "a",
-        "M" : "Frederick.Varn@jax.org",
+        "M" : "Kevin.C.Johnson@jax.org",
         "nodes" : 1,
         "ppn" : 2,
         "walltime" : "72:00:00",
@@ -213,10 +213,7 @@
     {
         "ppn" : 2,
         "mem" : 12,
-        "walltime" : "72:00:00",
-        "name" : "{rule}.{wildcards.pair_barcode}",
-        "stdout" : "logs/drmaa/{rule}.{wildcards.pair_barcode}.out",
-        "stderr" : "logs/drmaa/{rule}.{wildcards.pair_barcode}.err"
+        "walltime" : "72:00:00"
     },
     "selectvariants" :
     {
